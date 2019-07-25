@@ -1,8 +1,6 @@
 import 'package:expenses_app/widgets/user_transaction.dart';
 import 'package:flutter/material.dart';
 
-
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -16,7 +14,6 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatelessWidget {
-
   // String titleInput;
   // String amountInput;
   final titleController = TextEditingController();
@@ -25,10 +22,11 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Expenses App'),
-        ),
-        body: Column(
+      appBar: AppBar(
+        title: Text('Expenses App'),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Container(
@@ -39,8 +37,10 @@ class HomePage extends StatelessWidget {
                 elevation: 5,
               ),
             ),
-           UserTransactions(),
+            UserTransactions(),
           ],
-        ));
+        ),
+      ),
+    );
   }
 }
