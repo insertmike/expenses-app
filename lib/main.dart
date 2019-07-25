@@ -1,7 +1,7 @@
+import 'package:expenses_app/widgets/user_transaction.dart';
 import 'package:flutter/material.dart';
 
-import './widgets/transaction_list.dart';
-import './widgets/new_transaction.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -39,8 +39,7 @@ class HomePage extends StatelessWidget {
                 elevation: 5,
               ),
             ),
-           NewTransaction(),
-            TransactionList(),
+           UserTransactions(),
           ],
         ));
   }
