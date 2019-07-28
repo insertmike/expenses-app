@@ -18,8 +18,8 @@ class _NewTransactionState extends State<NewTransaction> {
   void _submitData() {
     final enteredTitle = _titleController.text;
     final enteredAmount = double.parse(_amountController.text);
-    
-    if (enteredTitle.isEmpty || enteredAmount <= 0 || _selectedDate == null)  {
+
+    if (enteredTitle.isEmpty || enteredAmount <= 0 || _selectedDate == null) {
       return;
     }
     widget.addNewTransaction(enteredTitle, enteredAmount, _selectedDate);
@@ -79,7 +79,8 @@ class _NewTransactionState extends State<NewTransaction> {
                     ),
                   ),
                   FlatButton(
-                    textColor: Colors.purple,
+                    textColor: Colors.black,
+                    splashColor: Theme.of(context).primaryColor,
                     child: Text(
                       'Choose Date',
                       style: TextStyle(fontWeight: FontWeight.bold),

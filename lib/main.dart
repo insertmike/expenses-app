@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Expenses App',
       theme: ThemeData(
         primarySwatch: Colors.green,
-        accentColor: Colors.yellow,
+       // accentColor: Colors.amberAccent,
         fontFamily: 'QuickSand',
         textTheme: ThemeData.light()
             .textTheme
@@ -41,27 +41,12 @@ class MyApp extends StatelessWidget {
 }
 
 class HomePage extends StatefulWidget {
-  // String titleInput;
-  // String amountInput;
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  final List<Transaction> _userTransactions = [
-    // Transaction(
-    //   id: 't1',
-    //   title: 'New Sunglasses',
-    //   amount: 19.29,
-    //   date: DateTime.now(),
-    // ),
-    // Transaction(
-    //   id: 't2',
-    //   title: 'Holiday',
-    //   amount: 22.56,
-    //   date: DateTime.now(),
-    // ),
-  ];
+  final List<Transaction> _userTransactions = [];
 
   List<Transaction> get _recentTransactions {
     return _userTransactions.where((el) {
