@@ -11,6 +11,23 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Expenses App',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+        accentColor: Colors.yellow,
+        fontFamily: 'QuickSand',
+        textTheme: ThemeData.light()
+            .textTheme
+            // Separate title theme for not appbar titles
+            .copyWith(title: TextStyle(fontFamily: 'OpenSans', fontSize: 18)),
+        appBarTheme: AppBarTheme(
+          textTheme: ThemeData.light().textTheme.copyWith(
+                title: TextStyle(
+                  fontFamily: 'OpenSans',
+                  fontSize: 20,
+                ),
+              ),
+        ),
+      ),
       home: HomePage(),
     );
   }
@@ -24,8 +41,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
- 
-   final List<Transaction> _userTransactions = [
+  final List<Transaction> _userTransactions = [
     Transaction(
       id: 't1',
       title: 'New Sunglasses',
@@ -47,23 +63,25 @@ class _HomePageState extends State<HomePage> {
         date: DateTime.now(),
         id: DateTime.now().toString());
 
-        setState(() {
-         _userTransactions.add(newTransaction); 
-        });
+    setState(() {
+      _userTransactions.add(newTransaction);
+    });
   }
 
   void _startAddNewTransaction(BuildContext context) {
-      showModalBottomSheet(context: context, builder: (_){
+    showModalBottomSheet(
+      context: context,
+      builder: (_) {
         return NewTransaction(_addNewTransaction);
       },
-      );
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Expenses App'),
+        title: Text('My Expenses'),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add),
