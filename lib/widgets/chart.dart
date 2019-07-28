@@ -51,10 +51,12 @@ class Chart extends StatelessWidget {
             (el) {
               return Flexible(
                 fit: FlexFit.tight,
-                            child: ChartBar(
+                child: ChartBar(
                   label: el['day'],
                   spendingAmount: el['amount'],
-                  spendingPctOfTotal: totalSpending == 0.0 ? 0 : ( ( el['amount'] as double ) / totalSpending ) ,
+                  spendingPctOfTotal: totalSpending == 0.0
+                      ? 0
+                      : ((el['amount'] as double) / totalSpending),
                 ),
               );
             },
