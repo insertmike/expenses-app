@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 import './transaction_item.dart';
 import '../models/transaction.dart';
@@ -37,11 +36,11 @@ class TransactionList extends StatelessWidget {
           )
         : ListView.builder(
             itemBuilder: (ctx, index) {
-              return TransactionItem(transaction: transactions[index], deleteTransaction: deleteTransaction);
+              return TransactionItem(
+                  transaction: transactions[index],
+                  deleteTransaction: deleteTransaction);
             },
             itemCount: transactions.length,
           );
   }
 }
-
-
